@@ -10,9 +10,10 @@ TextStyle roboto(
       fontSize: fontSize, fontWeight: fontWeight, color: color);
 }
 
+
 final ButtonStyle outlinedButtonStyle = OutlinedButton.styleFrom(
     side: const BorderSide(color: kblack), // Border color
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0), // Circular radius
     ),
-    minimumSize: Size(150, 45));
+    minimumSize: const Size(150, 45));

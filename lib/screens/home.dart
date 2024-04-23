@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hogr_machinetest/screens/page1.dart';
 import 'package:hogr_machinetest/utlis/colors.dart';
 import 'package:hogr_machinetest/controllers/home_controller.dart';
 import 'package:hogr_machinetest/routes/route_generator.dart';
 import 'package:hogr_machinetest/routes/routes.dart';
-import 'package:hogr_machinetest/screens/tab2.dart';
-import 'package:hogr_machinetest/screens/tab3.dart';
 
 class Home extends GetView<HomeController> {
   Home({super.key});
 
   final RouteGenerator routeGenerator = RouteGenerator();
-  final HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +23,8 @@ class Home extends GetView<HomeController> {
               initialRoute: Routes.page1,
               onGenerateRoute: routeGenerator.onGenerateRoute,
             ),
-            const Tab2(),
-            const Tab3(),
+            Page1(),
+            Page1(),
           ],
         );
       }),
@@ -39,7 +37,14 @@ class Home extends GetView<HomeController> {
           indicator: const BoxDecoration(color: kblack),
           indicatorSize: TabBarIndicatorSize.tab,
           onTap: (value) {
-            controller.currentIndex.value = value;
+            //checks if the same tab is  tapped again
+            if (controller.currentIndex.value == value) {
+              if (controller.currentIndex.value == 0) {
+                Get.offNamedUntil(Routes.page1, (route) => false, id: 1);
+              }
+            } else {
+              controller.currentIndex.value = value;
+            }
           },
           tabs: const [
             Tab(

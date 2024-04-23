@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hogr_machinetest/utlis/colors.dart';
-import 'package:hogr_machinetest/constants.dart';
+import 'package:hogr_machinetest/utlis/constants.dart';
 import 'package:hogr_machinetest/controllers/home_controller.dart';
 import 'package:hogr_machinetest/controllers/page3_controller.dart';
 
@@ -44,8 +44,8 @@ class Page3 extends StatelessWidget {
               margin: const EdgeInsets.symmetric(
                   vertical: 8, horizontal: 16), 
               child: ListTile(
-                tileColor:const Color.fromARGB(255, 128, 196, 228),
-                title: Text(controller.items[index]),
+                tileColor:kblue,
+                title: Text(controller.items[index],style: roboto(),),
               ),
             );
           },

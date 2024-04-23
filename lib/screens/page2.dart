@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hogr_machinetest/utlis/colors.dart';
-import 'package:hogr_machinetest/constants.dart';
-import 'package:hogr_machinetest/controllers/home_controller.dart';
+import 'package:hogr_machinetest/utlis/constants.dart';
 import 'package:hogr_machinetest/routes/routes.dart';
 
 class Page2 extends StatelessWidget {
